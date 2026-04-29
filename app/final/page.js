@@ -87,7 +87,7 @@ export default function Final() {
                         <p>A la hermana Yudmila Dieguez Cuellar por prestar los folletos para sacar extractos de:</p>
                         <p className="lead-p-glass">Teología del ministerio de la música (I) y (II) DEMAD 
                         (Departamento de música Iglesia Evangélica Pentecostal "Asambleas de Dios" 2009)</p>
-                        <p>Si deseas el folleto en PDF contacta a: +53 52471645</p>
+                        <p>Si deseas el folleto en PDF contacta a: josuepjnv@gmail.com</p>
                         <div><h3 className="lead-p-glass">Dios te siga guiando a toda verdad. Juan 8.32: 
                         y conoceréis la verdad, y la verdad os hará libres.</h3></div>
                             
