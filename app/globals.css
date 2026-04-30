@@ -544,33 +544,11 @@ h3 {
     z-index: 1001; /* encima del navbar */
     margin-top: 80px;
 }
-    .introduccion,
-    .puerta,
-    .atrio,
-    .lugar-santo,
-    .lugar-santisimo,
-    .final {
-        background-position: center top;
-    }
-    .portada {
-    background: url('/sources/Portada-mobile.png') center/cover no-repeat;
-    }
-    .introduccion {
-    background: url('/sources/Introduccion-mobile.png') center/cover no-repeat;
-    }
-    .puerta {
-    background: url('/sources/Puerta-mobile.png') center/cover no-repeat;
-    }
-    .atrio {
-    background: url('/sources/Atrio-mobile.png') center/cover no-repeat;
-    }
-    .lugar-santo {
-    background: url('/sources/Lugar-Santo-mobile.png') center/cover no-repeat;
-    }
-    .lugar-santisimo {
-    background: url('/sources/Lugar-Santisimo-mobile.png') center/cover no-repeat;
-    }
-    .final {
-    background: url('/sources/Final-mobile.png') center/cover no-repeat;
-    }
+    .portada { background: url('/sources/Portada-mobile.png') center/cover no-repeat;}
+    .introduccion { background: url('/sources/Introduccion-mobile.png') center/cover no-repeat;}
+    .puerta { background: url('/sources/Puerta-mobile.png') center/cover no-repeat;}
+    .atrio { background: url('/sources/Atrio-mobile.png') center/cover no-repeat;}
+    .lugar-santo { background: url('/sources/Lugar-Santo-mobile.png') center/cover no-repeat;}
+    .lugar-santisimo { background: url('/sources/Lugar-Santisimo-mobile.png') center/cover no-repeat;}
+    .final { background: url('/sources/Final-mobile.png') top center/cover no-repeat;}
 }
