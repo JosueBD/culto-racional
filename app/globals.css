@@ -516,7 +516,34 @@ h3 {
 }
 
 @media (max-width: 768px) {
-    .background,
+
+  /* NAVBAR */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+  /* PROGRESS BAR */
+    .progress-container {
+    top: 60px; /* debajo del navbar */
+    z-index: 999;
+}
+
+  /* CONTENIDO GENERAL */
+    .content,
+    .reading-container {
+    margin-top: 100px; /* evita que quede debajo del navbar */
+    padding: 0 15px;
+}
+
+  /* BOTÓN VOLVER */
+    .back-button {
+    position: relative;
+    z-index: 1001; /* encima del navbar */
+    margin-top: 80px;
+}
     .introduccion,
     .puerta,
     .atrio,
