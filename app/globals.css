@@ -517,38 +517,56 @@ h3 {
 
 @media (max-width: 768px) {
 
-  /* NAVBAR */
+  /* NAVBAR: Fijo y siempre arriba */
 .nav-bar {
     position: fixed;
     top: 0;
+    left: 0; /* Asegura que empiece desde el borde */
     width: 100%;
     z-index: 1000;
 }
 
-  /* PROGRESS BAR */
+  /* PROGRESS BAR: Justo debajo del navbar */
     .progress-container {
-    top: 60px; /* debajo del navbar */
+    position: fixed; /* Importante que también sea fixed si el navbar lo es */
+    top: 60px; 
+    width: 100%;
     z-index: 999;
 }
 
-  /* CONTENIDO GENERAL */
+  /* CONTENIDO GENERAL: Empuja todo hacia abajo para no quedar oculto */
     .content,
     .reading-container {
-    margin-top: 100px; /* evita que quede debajo del navbar */
-    padding: 0 15px;
+    margin-top: 110px; /* Ajustado para dar aire al progress bar */
+    padding: 0 20px;   /* Un poco más de espacio en móviles */
+    box-sizing: border-box; /* Evita que el padding rompa el ancho */
 }
 
   /* BOTÓN VOLVER */
-    .back-button {
+.back-button {
     position: relative;
-    z-index: 1001; /* encima del navbar */
-    margin-top: 80px;
+    z-index: 1001; 
+    margin-bottom: 20px; /* Es mejor usar margin-bottom para separar del texto */
+    display: inline-block;
 }
-    .portada { background: url('/public/sources/Portada-movil.png') center/cover no-repeat;}
-    .introduccion { background: url('/public/sources/Introduccion-movil.png') center/cover no-repeat;}
-    .puerta { background: url('/public/sources/Puerta-movil.png') center/cover no-repeat;}
-    .atrio { background: url('/public/sources/Atrio-movil.png') center/cover no-repeat;}
-    .lugar-santo { background: url('/public/sources/Lugar-Santo-movil.png') center/cover no-repeat;}
-    .lugar-santisimo { background: url('/public/sources/Lugar-Santisimo-movil.png') center/cover no-repeat;}
-    .final { background: url('/public/sources/Final-movil.png') top center/cover no-repeat;}
+
+  /* SECCIONES CON IMÁGENES DE FONDO */
+  /* Nota: He quitado '/public' asumiendo una estructura estándar de proyecto */
+    .portada, .introduccion, .puerta, .atrio, .lugar-santo, .lugar-santisimo, .final {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px; /* Asegura que la sección sea visible aunque tenga poco texto */
+}
+
+    .portada { background-image: url('/sources/Portada-movil.png'); }
+    .introduccion { background-image: url('/sources/Introduccion-movil.png'); }
+    .puerta { background-image: url('/sources/Puerta-movil.png'); }
+    .atrio { background-image: url('/sources/Atrio-movil.png'); }
+    .lugar-santo { background-image: url('/sources/Lugar-Santo-movil.png'); }
+    .lugar-santisimo { background-image: url('/sources/Lugar-Santisimo-movil.png'); }
+    .final { 
+    background-image: url('/sources/Final-movil.png'); 
+    background-position: top center;
+}
 }
