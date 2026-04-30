@@ -12,7 +12,7 @@ body, html {
 
 .background {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: url('/sources/Portada.png') no-repeat center center;
     background-size: 100% 100%;
     display: flex;
@@ -90,7 +90,7 @@ body, html {
     line-height: 1.6;
 }
 
-.introduccion { background: url('/sources/Introduccion.png') center/cover no-repeat fixed; }
+.introduccion { background: url('/sources/Introduccion.png') center/cover no-repeat; }
 .puerta { background: url('/sources/Puerta.png') center/cover no-repeat; }
 .atrio { background: url('/sources/Atrio.png') center/cover no-repeat; }
 .lugar-santo { background: url('/sources/Lugar-Santo.png') center/cover no-repeat; }
@@ -518,11 +518,32 @@ h3 {
 @media (max-width: 768px) {
     .background,
     .introduccion,
-    .puertas,
-    .atrios,
+    .puerta,
+    .atrio,
     .lugar-santo,
     .lugar-santisimo,
     .final {
         background-position: center top;
+    }
+    .portada {
+    background: url('/sources/Portada-mobile.png') center/cover no-repeat;
+    }
+    .introduccion {
+    background: url('/sources/Introduccion-mobile.png') center/cover no-repeat;
+    }
+    .puerta {
+    background: url('/sources/Puerta-mobile.png') center/cover no-repeat;
+    }
+    .atrio {
+    background: url('/sources/Atrio-mobile.png') center/cover no-repeat;
+    }
+    .lugar-santo {
+    background: url('/sources/Lugar-Santo-mobile.png') center/cover no-repeat;
+    }
+    .lugar-santisimo {
+    background: url('/sources/Lugar-Santisimo-mobile.png') center/cover no-repeat;
+    }
+    .final {
+    background: url('/sources/Final-mobile.png') center/cover no-repeat;
     }
 }
