@@ -74,8 +74,8 @@ export default function LugarSantisimo() {
                         La Adoración es un tributo altamente disputado en el mundo espiritual;
                     </p>
                     <p>Son muchos los seres espirituales que han pretendido recibir adoración</p>
-                    <p className="p-p-glass">buscando de esta manera usurpar el derecho y autoinvestirse 
-                    <span className="word"> la dignidad del Dios Altísimo.</span></p>
+                    <div className="p-p-glass">buscando de esta manera usurpar el derecho y autoinvestirse 
+                    <span className="word"> la dignidad del Dios Altísimo.</span></div>
                     <p>La consideración Divina de este grado de osadia ha sido tal que 
                     el Todopoderoso ha entendido pertinente reclamar Su inalienable
                     derecho en virtud de Su posición como Unico y Verdadero Dios.
@@ -86,9 +86,9 @@ export default function LugarSantisimo() {
                     verdadero reto para nuestro intelecto y una real necesidad para nuestra sagrada profesión alcanzar a
                     tener al menos una idea de cuánto puede significar para Él lo que a diario le estamos tributando.
                     </p>
-                    <p>La Biblia nos facilita una orientación correcta para la Adoracion, 
+                    <div>La Biblia nos facilita una orientación correcta para la Adoracion, 
                     proyectándola hacia el Divino Creador y asegurándonos que llegará el hermoso dia en que 
-                    "toda la tierra <span className="word">(LE)</span> adorará"(Sal. 66:4).</p>
+                    "toda la tierra <span className="word">(LE)</span> adorará"(Sal. 66:4).</div>
                     <p className="p-p-glass">Pudieramos definir la adoración, como tributo Privado de Dios, 
                     como la manifestación suprema de lealtad y sumisión; pues fue realmento lo que Dios le pidió al 
                     pueblo hebreo (Deut. 6.13.), lo que los magos del oriente le manifestaron al Niño, lo que Juan y 
@@ -102,7 +102,7 @@ export default function LugarSantisimo() {
                     <p className="p-p-glass">
                     Juan estaba diciendo: No soy digno de postrarme y adorarle.
                     </p>
-                    <p className="p-p-glass"><h4>Postrado, rogó</h4></p>
+                    <div className="p-p-glass"><h4>Postrado, rogó</h4></div>
                     <p>22Y vino uno de los principales de la sinagoga, llamado Jairo; 
                     y luego que le vio, se postró a sus pies,</p> 
                     <p>23y le rogaba mucho, diciendo: Mi hija está agonizando; 
@@ -123,8 +123,8 @@ export default function LugarSantisimo() {
                     <li><span className="word">Esperando</span> Respuesta</li>
                 </ul>
 
-                <ul className="ul-p-p-glass"><h2>La Adoración: Es la entrega, es el murmullo con que Ana
-                    hablaba en su corazón, es la quietud, es la espera, es la manifestación de Dios para hablarnos.</h2></ul>
+                <ul className="ul-p-p-glass"><h2>La Adoración: Es la entrega, es el murmullo en el corazón, 
+                es la quietud, es la espera, es la manifestación de Dios para hablarnos.</h2></ul>
                     
 
                     <Quiz
@@ -154,8 +154,8 @@ export default function LugarSantisimo() {
                     <p>25Pero una mujer que desde hacía doce años padecía de flujo de sangre,</p> 
                     <p>26y había sufrido mucho de muchos médicos, y gastado todo lo que tenía, 
                     y nada había aprovechado, antes le iba peor,</p> 
-                    <p>27cuando <span className="word">oyó</span> hablar de Jesús, vino por detrás entre la multitud, 
-                    y tocó su manto. Mar.5.25-27</p>
+                    <div>27cuando <span className="word">oyó</span> hablar de Jesús, vino por detrás entre la multitud, 
+                    y tocó su manto. Mar.5.25-27</div>
                 </motion.div>
             </motion.div>
             ) : (
