@@ -7,16 +7,16 @@ export default function StageAudio({ src }) {
     const audioRef = useRef(null);
 
     useEffect(() => {
-        // Crear el audio solo si no existe o si cambia el src
+        // Solo creamos el audio en el cliente
         const audio = new Audio(src);
-        audio.loop = true; // Si es música de fondo, suele ir en loop
+        audio.loop = true;
         audio.volume = 0.5;
         audioRef.current = audio;
 
         if (enabled) {
-            // Este play() fallará al cargar la página (por políticas del navegador)
-            // pero se activará en cuanto el usuario haga clic en cualquier botón (como "Introducción")
-            audio.play().catch(() => console.log("Esperando interacción para sonar..."));
+            audio.play().catch(() => {
+                // El navegador bloquea el autoplay, es normal.
+            });
         }
 
         return () => {
@@ -24,7 +24,7 @@ export default function StageAudio({ src }) {
             audio.src = "";
             audioRef.current = null;
         };
-    }, [src]);
+    }, [src]); // Quitamos enabled de aquí para que no se reinicie el archivo al mutear
 
     useEffect(() => {
         if (!audioRef.current) return;
