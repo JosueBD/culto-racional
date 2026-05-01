@@ -559,12 +559,12 @@ h3 {
     min-height: 300px; /* Asegura que la sección sea visible aunque tenga poco texto */
 }
 
-    .background {
-        background: none;
-        background-image: url('/sources/Portada-movil.png') important;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+.background {
+    background: url('/sources/Portada-movil.png') no-repeat center center !important;
+    background-size: cover !important; /* 'cover' es mejor para móviles que 100% 100% */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Recomendado para que el navbar y contenido se apilen bien */
 }
     
     .introduccion { background-image: url('/sources/Introduccion-movil.png'); }
