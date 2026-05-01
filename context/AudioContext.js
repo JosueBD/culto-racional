@@ -4,17 +4,19 @@ import { createContext, useContext, useState, useEffect } from "react";
 const AudioContext = createContext();
 
 export function AudioProvider({ children }) {
-    const [enabled, setEnabled] = useState(true); // Siempre true al inicio
+    // 1. Empezamos SIEMPRE en true para coincidir con el servidor
+    const [enabled, setEnabled] = useState(true);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        // Esto solo corre en el navegador, Vercel lo ignorará en el build
+        // 2. Solo cuando el componente monta en el navegador, revisamos la preferencia
         const saved = localStorage.getItem("mute");
         if (saved === "1") {
             setEnabled(false);
         }
+        setIsLoaded(true);
     }, []);
 
-    // Definimos playEffect para que no de error de referencia
     const playEffect = (src) => {
         if (!enabled) return;
         const audio = new Audio(src);
@@ -23,7 +25,7 @@ export function AudioProvider({ children }) {
     };
 
     return (
-        <AudioContext.Provider value={{ enabled, setEnabled, playEffect }}>
+        <AudioContext.Provider value={{ enabled, setEnabled, playEffect, isLoaded }}>
             {children}
         </AudioContext.Provider>
     );
