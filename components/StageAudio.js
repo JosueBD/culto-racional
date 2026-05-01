@@ -7,36 +7,33 @@ export default function StageAudio({ src }) {
     const audioRef = useRef(null);
 
     useEffect(() => {
-        // Limpia cualquier audio anterior
-        if (audioRef.current) {
-            audioRef.current.pause();
-            audioRef.current.src = "";
-            audioRef.current = null;
-        }
-
+        // Crear el audio solo si no existe o si cambia el src
         const audio = new Audio(src);
-        audio.onended = () => {
-        // No hacer nada → evita reinicio automático
-        };
+        audio.loop = true; // Si es música de fondo, suele ir en loop
         audio.volume = 0.5;
         audioRef.current = audio;
 
         if (enabled) {
-            audio.play().catch(() => {});
+            // Este play() fallará al cargar la página (por políticas del navegador)
+            // pero se activará en cuanto el usuario haga clic en cualquier botón (como "Introducción")
+            audio.play().catch(() => console.log("Esperando interacción para sonar..."));
         }
 
         return () => {
-            if (audioRef.current) {
-                audioRef.current.pause();
-                audioRef.current.src = "";
-            }
+            audio.pause();
+            audio.src = "";
+            audioRef.current = null;
         };
-    }, [src]); // solo src
+    }, [src]);
 
-    // Toggle play/pause cuando cambia enabled
     useEffect(() => {
         if (!audioRef.current) return;
-        enabled ? audioRef.current.play().catch(() => {}) : audioRef.current.pause();
+        
+        if (enabled) {
+            audioRef.current.play().catch(() => {});
+        } else {
+            audioRef.current.pause();
+        }
     }, [enabled]);
 
     return null;
