@@ -98,7 +98,13 @@ export default function Introduccion() {
 
             <p className="p-glass">
             Cada elemento del culto tiene su momento. Alterar el orden produce
-            confusión y pérdida de sentido.
+            confusión y pérdida de sentido. Si lo mezcla, es servirle a Dios comida 
+            no agradable. Si usted invita a una persona a comer a su casa,
+            y cuando se sientan a la mesa, le pone una fuente y dentro le sirve:
+            jugo de naranja, café, arroz, el plato fuerte, ensalada, batido de mango,
+            mermelada de guayaba, etc, ¿que le va a decir la persona que invitó? bueno, 
+            ¿usted no cree que lo mismo piensa Dios cuando mezclamos los elementos del culto?
+            ¿qué le estamos ofreciendo a Dios, olor fragante, sacrificio acepto a Dios?
             </p>
         <div class="reading">
                 <blockquote>
