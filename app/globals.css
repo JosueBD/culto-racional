@@ -559,7 +559,14 @@ h3 {
     min-height: 300px; /* Asegura que la sección sea visible aunque tenga poco texto */
 }
 
-    .portada { background-image: url('/sources/Portada-movil.png'); }
+    .portada {
+        background: none;
+        background-image: url('/sources/Portada-movil.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+}
+    
     .introduccion { background-image: url('/sources/Introduccion-movil.png'); }
     .puerta { background-image: url('/sources/Puerta-movil.png'); }
     .atrio { background-image: url('/sources/Atrio-movil.png'); }
