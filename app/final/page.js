@@ -82,9 +82,9 @@ export default function Final() {
                         <p>A <span className="word">JesuCristo</span> Nuestro Redentor.</p>
                         <p>Al <span className="word">Espíritu Santo</span> por su Consuelo y guia.</p>
                         <p>A mi Amada esposa Oleydis de Borges por estar a mi lado orando, apoyando y aconsejando.</p>
-                        <p>A mis hermanos Mario y Dámaris Borges por sus oraciones, consejos y ayudas.</p>
+                        <p>A mis hermanos Mario su esposa Margarita y Dámaris Borges por sus oraciones, consejos y ayudas.</p>
                         <p>A mis hijos Peter Josué su esposa Karen y mi hija Noemí Borges por sus oraciones.</p>
-                        <p>A la hermana Yudmila Dieguez Cuellar por prestar los folletos para sacar extractos de:</p>
+                        <p>A la hermana Yudmila Dieguez Cuellar(gracias mi hermana) por prestar los folletos para sacar extractos de:</p>
                         <p className="lead-p-glass">Teología del ministerio de la música (I) y (II) DEMAD 
                         (Departamento de música Iglesia Evangélica Pentecostal "Asambleas de Dios" 2009)</p>
                         <p>Si deseas el folleto en PDF contacta a: josuepjnv@gmail.com</p>
