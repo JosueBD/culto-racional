@@ -123,7 +123,7 @@ export default function LugarSantisimo() {
                     <li><span className="word">Esperando</span> Respuesta</li>
                 </ul>
 
-                <ul className="ul-p-p-glass"><h2>La Adoración: Es la entrega, es el murmullo en el corazón, 
+                <ul className="ul-p-p-glass"><h2>La Adoración: Es la entrega, es el murmullo, 
                 es la quietud, es la espera, es la manifestación de Dios para hablarnos.</h2></ul>
                     
 
