@@ -7,7 +7,6 @@ export default function SoundToggle() {
     const handleToggle = () => {
         const newState = !enabled;
         setEnabled(newState);
-        // Guardamos '0' para sonido activado, '1' para muteado
         localStorage.setItem("mute", newState ? "0" : "1");
     };
 
@@ -24,11 +23,7 @@ export default function SoundToggle() {
                 height: "50px",
                 borderRadius: "50%",
                 padding: "0",
-                fontSize: "24px", // Un poquito más grande para que se vea bien
-                background: "rgba(250, 156, 5, 0.23)", // Estilo cristal para que combine con tu web
-                backdropFilter: "blur(10px)",
-                border: "1px solid rgba(255, 255, 255, 0.3)",
-                cursor: "pointer"
+                fontSize: "20px"
             }}
         >
             {enabled ? "🔊" : "🔇"}

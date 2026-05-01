@@ -1,22 +1,12 @@
 "use client";
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useRef } from "react";
 
 const AudioContext = createContext();
 
 export function AudioProvider({ children }) {
-    // 1. Empezamos SIEMPRE en true para coincidir con el servidor
-    const [enabled, setEnabled] = useState(true);
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [enabled, setEnabled] = useState(false);
 
-    useEffect(() => {
-        // 2. Solo cuando el componente monta en el navegador, revisamos la preferencia
-        const saved = localStorage.getItem("mute");
-        if (saved === "1") {
-            setEnabled(false);
-        }
-        setIsLoaded(true);
-    }, []);
-
+    // Función global para efectos de sonido (correct/wrong)
     const playEffect = (src) => {
         if (!enabled) return;
         const audio = new Audio(src);
@@ -25,7 +15,7 @@ export function AudioProvider({ children }) {
     };
 
     return (
-        <AudioContext.Provider value={{ enabled, setEnabled, playEffect, isLoaded }}>
+        <AudioContext.Provider value={{ enabled, setEnabled, playEffect }}>
             {children}
         </AudioContext.Provider>
     );

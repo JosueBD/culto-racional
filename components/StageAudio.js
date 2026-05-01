@@ -7,33 +7,36 @@ export default function StageAudio({ src }) {
     const audioRef = useRef(null);
 
     useEffect(() => {
-        // Solo creamos el audio en el cliente
+        // Limpia cualquier audio anterior
+        if (audioRef.current) {
+            audioRef.current.pause();
+            audioRef.current.src = "";
+            audioRef.current = null;
+        }
+
         const audio = new Audio(src);
-        audio.loop = true;
+        audio.onended = () => {
+        // No hacer nada → evita reinicio automático
+        };
         audio.volume = 0.5;
         audioRef.current = audio;
 
         if (enabled) {
-            audio.play().catch(() => {
-                // El navegador bloquea el autoplay, es normal.
-            });
+            audio.play().catch(() => {});
         }
 
         return () => {
-            audio.pause();
-            audio.src = "";
-            audioRef.current = null;
+            if (audioRef.current) {
+                audioRef.current.pause();
+                audioRef.current.src = "";
+            }
         };
-    }, [src]); // Quitamos enabled de aquí para que no se reinicie el archivo al mutear
+    }, [src]); // solo src
 
+    // Toggle play/pause cuando cambia enabled
     useEffect(() => {
         if (!audioRef.current) return;
-        
-        if (enabled) {
-            audioRef.current.play().catch(() => {});
-        } else {
-            audioRef.current.pause();
-        }
+        enabled ? audioRef.current.play().catch(() => {}) : audioRef.current.pause();
     }, [enabled]);
 
     return null;
