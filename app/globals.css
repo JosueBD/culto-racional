@@ -559,9 +559,9 @@ h3 {
     min-height: 300px; /* Asegura que la sección sea visible aunque tenga poco texto */
 }
 
-    .portada {
+    .background {
         background: none;
-        background-image: url('/sources/Portada-movil.png');
+        background-image: url('/sources/Portada-movil.png') important;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
