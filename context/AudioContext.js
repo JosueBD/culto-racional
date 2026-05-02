@@ -1,12 +1,16 @@
 "use client";
-import { createContext, useContext, useState, useRef } from "react";
+import { createContext, useContext, useState } from "react";
 
-const AudioContext = createContext();
+const AudioContext = createContext(null);
 
 export function AudioProvider({ children }) {
-    const [enabled, setEnabled] = useState(false);
+    const [enabled, setEnabled] = useState(() => {
+        if (typeof window === "undefined") return true;
+        const saved = localStorage.getItem("mute");
+        if (saved === null) return true; // arranca sin mute
+        return saved !== "1";
+    });
 
-    // Función global para efectos de sonido (correct/wrong)
     const playEffect = (src) => {
         if (!enabled) return;
         const audio = new Audio(src);

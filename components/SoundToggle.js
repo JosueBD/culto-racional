@@ -1,5 +1,5 @@
 "use client";
-import { useAudio } from "@/context/AudioContext"; 
+import { useAudio } from "@/context/AudioContext";
 
 export default function SoundToggle() {
     const { enabled, setEnabled } = useAudio();
@@ -12,7 +12,7 @@ export default function SoundToggle() {
 
     return (
         <button
-            onClick={handleToggle} 
+            onClick={handleToggle}
             className="btn"
             style={{
                 position: "fixed",
