@@ -11,11 +11,11 @@ export default function Home() {
   const handleStart = () => {
     setShowInfo(false);
     setEnabled(true); 
+    localStorage.setItem("mute", "0");
   };
 
   return (
     <main className="background">
-      {/* CAMBIO AQUÍ: Solo cargamos el componente de audio si el cartel se cerró */}
       {!showInfo && <StageAudio src="/audio/fondo.mp3" />}
       
       <NavBar />
@@ -27,6 +27,7 @@ export default function Home() {
             <div className="text-left" style={{ textAlign: "left", margin: "20px 0" }}>
                 <p><strong>🔊 Audio:</strong> La atmósfera sonora se activará ahora.</p>
                 <p><strong>🖱️ Navegación:</strong> Usa el menú izquierdo para las etapas.</p>
+                <p><strong>📖 Lectura:</strong> En las etapas (Puertas en adelante), lee primero la columna <strong>izquierda</strong>, luego la <strong>derecha</strong> y finalmente el <strong>centro</strong>.</p>
                 <p><strong>📱 Interacción:</strong> Toca los elementos para explorar.</p>
             </div>
             <button onClick={handleStart} className="btn-entrar">
