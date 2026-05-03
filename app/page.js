@@ -26,7 +26,8 @@ export default function Home() {
             <h2>Guía de Inicio</h2>
             <div className="text-left" style={{ textAlign: "left", margin: "20px 0" }}>
                 <p><strong>🔊 Audio:</strong> La atmósfera sonora se activará ahora.</p>
-                <p><strong>🖱️ Navegación:</strong> Usa el menú izquierdo para las etapas.</p>
+                <p><strong>🖱️ Navegación:</strong> Usa el menú izquierdo para las etapas.
+                en el movil se mantiene en el centro.</p>
                 <p><strong>📖 Lectura:</strong> En las etapas (Puertas en adelante), lee primero la columna <strong>izquierda</strong>, luego la <strong>derecha</strong> y finalmente el <strong>centro</strong>.</p>
                 <p><strong>📱 Interacción:</strong> Toca los elementos para explorar.</p>
             </div>
