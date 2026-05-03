@@ -576,4 +576,80 @@ h3 {
     background-image: url('/sources/Final-movil.png'); 
     background-position: top center;
 }
+
+.glass-modal {
+    width: 85%;
+    padding: 20px;
+}
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(4px);
+
+}
+
+.glass-modal {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 320px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+
+}
+
+.glass-modal h2 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: #fa9c05;
+    text-shadow: 0 0 10px rgba(250, 156, 5, 0.3);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.glass-modal p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.btn-entrar {
+    margin-top: 20px;
+    background: linear-gradient(135deg, rgba(250, 156, 5, 0.2), rgba(250, 156, 5, 0.4));
+    border: 1px solid #fa9c05;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(250, 156, 5, 0.2);
+    text-transform: uppercase;
+}
+
+.btn-entrar:hover {
+    background: #fa9c05;
+    color: #000; /* Cambia a negro para legibilidad al brillar */
+    box-shadow: 0 0 20px rgba(250, 156, 5, 0.6);
+    transform: translateY(-2px);
+}
+
+.glass-modal p strong {
+    color: #fa9c05;
 }

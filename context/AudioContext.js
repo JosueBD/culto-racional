@@ -1,15 +1,18 @@
 "use client";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
-const AudioContext = createContext(null);
+const AudioContext = createContext();
 
 export function AudioProvider({ children }) {
-    const [enabled, setEnabled] = useState(() => {
-        if (typeof window === "undefined") return true;
+    // Empezamos en false para que no intente sonar antes del clic
+    const [enabled, setEnabled] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
         const saved = localStorage.getItem("mute");
-        if (saved === null) return true; // arranca sin mute
-        return saved !== "1";
-    });
+        if (saved === "0") setEnabled(true);
+        setIsLoaded(true);
+    }, []);
 
     const playEffect = (src) => {
         if (!enabled) return;
@@ -19,12 +22,10 @@ export function AudioProvider({ children }) {
     };
 
     return (
-        <AudioContext.Provider value={{ enabled, setEnabled, playEffect }}>
+        <AudioContext.Provider value={{ enabled, setEnabled, playEffect, isLoaded }}>
             {children}
         </AudioContext.Provider>
     );
 }
 
-export function useAudio() {
-    return useContext(AudioContext);
-}
+export function useAudio() { return useContext(AudioContext); }
