@@ -10,18 +10,16 @@ export default function Home() {
 
   const handleStart = () => {
     setShowInfo(false);
-    setEnabled(true); // Activa el audio al cerrar la guía
+    setEnabled(true); 
   };
 
   return (
     <main className="background">
-      {/* 1. El audio de fondo siempre presente */}
-      <StageAudio src="/audio/fondo.mp3" />
+      {/* CAMBIO AQUÍ: Solo cargamos el componente de audio si el cartel se cerró */}
+      {!showInfo && <StageAudio src="/audio/fondo.mp3" />}
       
-      {/* 2. Tu navegación normal */}
       <NavBar />
 
-      {/* 3. La ventana modal dorada (solo aparece al inicio) */}
       {showInfo && (
         <div className="modal-overlay">
           <div className="glass-modal">
