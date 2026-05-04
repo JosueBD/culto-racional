@@ -4,7 +4,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 const AudioContext = createContext();
 
 export function AudioProvider({ children }) {
-    // Empezamos en false para que no intente sonar antes del clic
+    // Empieza en false para que no intente sonar antes del clic
     const [enabled, setEnabled] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
 

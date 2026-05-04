@@ -92,7 +92,6 @@ export default function Final() {
                         y conoceréis la verdad, y la verdad os hará libres.</h3></div>
                             
 
-                        {/* Aquí usamos la función handleReset */}
                         <button className="btn" onClick={handleReset}>
                             Reiniciar recorrido
                         </button>

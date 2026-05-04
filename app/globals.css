@@ -405,18 +405,17 @@ h3 {
     color: rgba(255, 255, 255, 0.838) !important;
     pointer-events: none;
     
-    /* IMPORTANTE: Quita el overflow hidden si lo tenías */
     overflow: visible !important; 
-    min-width: 120px; /* Asegura un ancho mínimo para que quepa el icono */
+    min-width: 120px; /* Esto asegura un ancho mínimo para que quepa el icono */
 }
 
 .nav-link.locked::after {
-    content: "🔒"; /* Asegúrate de que este emoji sea compatible */
+    content: "🔒"; 
     font-size: 1rem;
     margin-left: 10px;
     display: inline-block;
     vertical-align: middle;
-    /* Forzamos que siempre esté visible */
+    /* Forzar que siempre esté visible */
     opacity: 1 !important;
     visibility: visible !important;
 }
@@ -480,7 +479,7 @@ h3 {
     display: inline-block; /* Importante para que acepte padding y bordes correctamente sin saltar de línea */
     background: rgba(212, 175, 55, 0.15); /* Un dorado muy tenue y transparente */
     
-    /* El efecto vidrio (opcional, si quieres que se vea borroso detrás de la palabra) */
+    /* El efecto vidrio (opcional, para que se vea borroso detrás de la palabra) */
     backdrop-filter: blur(3px); 
     -webkit-backdrop-filter: blur(3px);
 
@@ -492,7 +491,7 @@ h3 {
     padding: 1px 6px; 
     
     /* Ajustes de texto para resaltar */
-    color: #fab803; /* Usamos tu color dorado para el texto */
+    color: #fab803; /* Color dorado para el texto */
     font-weight: 600; /* Ligeramente más negrita */
     
     /* Ajuste fino para que no se vea desalineada con el resto del párrafo */
@@ -551,12 +550,12 @@ h3 {
 }
 
   /* SECCIONES CON IMÁGENES DE FONDO */
-  /* Nota: He quitado '/public' asumiendo una estructura estándar de proyecto */
+  /* estructura estándar de proyecto */
     .portada, .introduccion, .puerta, .atrio, .lugar-santo, .lugar-santisimo, .final {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 300px; /* Asegura que la sección sea visible aunque tenga poco texto */
+    min-height: 300px; /* Esto asegura que la sección sea visible aunque tenga poco texto */
 }
 
 .background {
