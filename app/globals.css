@@ -35,7 +35,7 @@ body, html {
 }
 
 .nav-link {
-    background: rgba(#d4a24c73);
+    background: #d4a24c73;
     color: #ffffff;
     width: 90%;
     height: auto; min-height: 50px;
@@ -504,7 +504,7 @@ h3 {
     font-weight: 600;
 }
 
-.div p-p-glass {
+.div .p-p-glass {
     background: rgba(252, 177, 3, 0.129);
     border: 1px solid rgba(212, 175, 55, 0.1);
     backdrop-filter: blur(4px);
