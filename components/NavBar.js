@@ -32,8 +32,10 @@ export default function NavBar() {
             <img src="/sources/Logo.png"/>
         </div>
 
-        {steps.map((step, index) => {
-            const locked = index > progreso;
+        {steps
+            .filter(step => step !== "portada")
+            .map((step, index) => {
+                const locked = index + 1 > progreso;
 
             return (
             <Link

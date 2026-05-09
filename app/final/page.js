@@ -81,7 +81,7 @@ export default function Final() {
                         <p>A <span className="word">Dios Padre</span> Celestial.</p>
                         <p>A <span className="word">JesuCristo</span> Nuestro Redentor.</p>
                         <p>Al <span className="word">Espíritu Santo</span> por su Consuelo y guia.</p>
-                        <p>A mi Amada esposa Oleydis de Borges por estar a mi lado orando, apoyando y aconsejando.</p>
+                        <p>A mi Amada esposa Oleydis de Borges por estar a mi lado apoyando, orando y aconsejando.</p>
                         <p>A mis hermanos Mario su esposa Margarita y Dámaris Borges por sus oraciones, consejos y ayudas.</p>
                         <p>A mis hijos Peter Josué su esposa Karen y mi hija Noemí Borges por sus oraciones.</p>
                         <p>A la hermana Yudmila Dieguez Cuellar(gracias mi hermana) por prestar los folletos para sacar extractos de:</p>

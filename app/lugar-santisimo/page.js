@@ -118,7 +118,7 @@ export default function LugarSantisimo() {
                 <ul className="ul-p-p-glass">
                     <li><span className="word">Postrado</span></li>
                     <li><span className="word">Corazón</span> entregado</li>
-                    <li>En algunos momentos <span class="word">Rogando</span></li>
+                    <li>En algunos momentos <span className="word">Rogando</span></li>
                     <li>En otros en <span className="word">Silencio</span></li>
                     <li><span className="word">Esperando</span> Respuesta</li>
                 </ul>

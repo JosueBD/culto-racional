@@ -78,7 +78,7 @@ export default function Introduccion() {
             presencia de Dios(Lugar Santísimo)            
             </p>
 
-        <div class="reading">
+        <div className="reading">
             <blockquote>
             <ul>                
                     <p>Por tanto, no se debe confundir lo que Dios nos 
@@ -106,7 +106,7 @@ export default function Introduccion() {
             ¿usted no cree que lo mismo piensa Dios cuando mezclamos los elementos del culto?
             ¿qué le estamos ofreciendo a Dios, olor fragante, sacrificio acepto a Dios?
             </p>
-        <div class="reading">
+        <div className="reading">
                 <blockquote>
                     <p className="p-glass">
                     El avance correcto implica transición:
