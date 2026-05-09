@@ -523,7 +523,7 @@ h3 {
     top: 0;
     left: 0; /* Asegura que empiece desde el borde */
     width: 100%;
-    z-index: 1000;
+    z-index: 100;
 }
 
   /* PROGRESS BAR: Justo debajo del navbar */
@@ -585,15 +585,17 @@ h3 {
 
 .modal-overlay {
     position: fixed;
+    inset: 0;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2000;
+    z-index: 99999;
+    isolation: isolate;
     backdrop-filter: blur(4px);
 
 }
