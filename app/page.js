@@ -65,7 +65,7 @@ export default function Home() {
     <main className="background">
       {!showInfo && <StageAudio src="/audio/fondo.mp3" />}
       
-      <NavBar />
+      {!showInfo && <NavBar />}
 
       <AuthModal isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} />
 
@@ -160,6 +160,12 @@ export default function Home() {
         .content-overlay {
           z-index: 10;
         }
+          
+        .modal-overlay {
+          position: fixed;
+          inset: 0;
+          z-index: 9999;
+}
       `}</style>
     </main>
   );
