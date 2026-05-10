@@ -134,7 +134,7 @@ export default function Home() {
                 <p><strong>⏱ Sincronizar programa:</strong> sincronice, Resetée, o Cierre.</p>
                 <p><strong>🔊 Audio:</strong> Se activará al empezar.</p>
                 <p><strong>🖱️ Navegación:</strong> Use el menú izquierdo, cuando haya sido desbloqueado. Cada etapa
-                se irá desbloqueando a medida que avance.</p>
+                se irá desbloqueando a medida que avance.En el movil el menú queda en el centro.</p>
                 <p><strong>📖 Lectura:</strong> Orden: izquierda, derecha y centro.</p>
                 <p><strong>📱 Interacción:</strong> Toca para explorar.</p>
             </div>
