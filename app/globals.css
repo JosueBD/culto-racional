@@ -519,16 +519,18 @@ h3 {
 
   /* NAVBAR: Fijo y siempre arriba */
 .nav-bar {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0; /* Asegura que empiece desde el borde */
-    width: 100%;
     z-index: 100;
+    will-change: auto;
+    transform: none;
+    backdrop-filter: none;
 }
 
   /* PROGRESS BAR: Justo debajo del navbar */
 .progress-container {
-    position: fixed; /* Importante que también sea fixed si el navbar lo es */
+    position: absolute; /* Importante que también sea absolute si el navbar lo es */
     top: 60px; 
     width: 100%;
     z-index: 999;
