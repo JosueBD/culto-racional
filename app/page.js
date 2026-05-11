@@ -22,7 +22,11 @@ export default function Home() {
 
     // comprobar guía primero
     const yaVioGuia = localStorage.getItem("guia-vista");
-    setShowInfo(!yaVioGuia);
+    if (!yaVioGuia) {
+      setShowInfo(true);
+    } else {
+      setShowInfo(false);
+    }
 
     try {
       // 1. Obtener usuario
