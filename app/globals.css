@@ -519,7 +519,7 @@ h3 {
 
   /* NAVBAR: Fijo y siempre arriba */
 .nav-bar {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0; /* Asegura que empiece desde el borde */
     z-index: 100;
