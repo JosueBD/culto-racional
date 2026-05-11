@@ -128,8 +128,8 @@ export default function Home() {
             <h2>Guía de Inicio</h2>
             <div className="text-left" style={{ textAlign: "left", margin: "20px 0" }}>
                 <p><strong>🙌 Bienvenida A:</strong> Culto Racional</p>
-                <p><strong>🔐 Registro:</strong> Registrese.</p>
-                <p><strong>🔑 Autenticarse:</strong> Inicie sesión.</p>
+                <p><strong>🔐 Registro:</strong> Crear cuenta.</p>
+                <p><strong>🔑 Acceso:</strong> Iniciar sesión.</p>
                 <p><strong>🔓 Gestionar cuenta:</strong> Click.</p>
                 <p><strong>⏱ Sincronizar programa:</strong> sincronice, Resetée, o Cierre.</p>
                 <p><strong>🔊 Audio:</strong> Se activará al empezar.</p>
