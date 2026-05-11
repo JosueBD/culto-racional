@@ -16,24 +16,34 @@ export default function Home() {
   const [progresoLocal, setProgresoLocal] = useState(0);
 
   useEffect(() => {
-    async function inicializarTodo() {
-      try {
-        // 1. Obtener usuario
-        const { data: { user: currentUser } } = await supabase.auth.getUser();
-        setUser(currentUser);
-        
-        // 2. Sincronizar (si hay usuario trae de nube, si no usa local)
-        const nivelSincronizado = await sincronizarProgreso();
-        setProgresoLocal(nivelSincronizado);
-      } catch (error) {
-        console.error("Error al inicializar:", error);
-      } finally {
-        setIsSyncing(false);
-      }
+  async function inicializarTodo() {
+
+    // comprobar guía primero
+    const yaVioGuia = localStorage.getItem("guia-vista");
+
+    if (!yaVioGuia) {
+      setShowInfo(true);
     }
-    
-    inicializarTodo();
-  }, []);
+
+    try {
+      // 1. Obtener usuario
+      const { data: { user: currentUser } } = await supabase.auth.getUser();
+      setUser(currentUser);
+
+      // 2. Sincronizar
+      const nivelSincronizado = await sincronizarProgreso();
+      setProgresoLocal(nivelSincronizado);
+
+    } catch (error) {
+      console.error("Error al inicializar:", error);
+
+    } finally {
+      setIsSyncing(false);
+    }
+  }
+
+  inicializarTodo();
+}, []);
 
   useEffect(() => {
     const {
@@ -48,7 +58,7 @@ export default function Home() {
   const handleStart = () => {
     setShowInfo(false);
     setEnabled(true); 
-    localStorage.setItem("mute", "0");
+    localStorage.setItem("guia-vista", "1");
   };
 
   if (isSyncing) {
@@ -134,7 +144,7 @@ export default function Home() {
                 <p><strong>⏱ Sincronizar programa:</strong> sincronice, Resetée, o Cierre.</p>
                 <p><strong>🔊 Audio:</strong> Se activará al empezar.</p>
                 <p><strong>🖱️ Navegación:</strong> Use el menú izquierdo, cuando haya sido desbloqueado. Cada etapa
-                se irá desbloqueando a medida que avance.En el movil el menú queda en el centro.</p>
+                se irá desbloqueando a medida que avance. En el movil el menú queda en el centro.</p>
                 <p><strong>📖 Lectura:</strong> Orden: izquierda, derecha y centro.</p>
                 <p><strong>📱 Interacción:</strong> Toca para explorar.</p>
             </div>
@@ -165,8 +175,8 @@ export default function Home() {
           position: fixed;
           inset: 0;
           z-index: 9999;
-}
-      `}</style>
+        }`}
+      </style>
     </main>
   );
 }

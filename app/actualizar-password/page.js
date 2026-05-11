@@ -1,8 +1,14 @@
 "use client";
 
-import { useState } from "react";
-import { supabase } from "@/lib/supabase"; // Asegúrate de que esta ruta sea correcta
+import { useState, useEffect } from "react";
+import { supabase } from "@/lib/supabase"; 
 import { useRouter } from "next/navigation";
+
+useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+        console.log("SESSION:", data.session);
+    });
+}, []);
 
 export default function ActualizarPasswordPage() {
     const [nuevaPassword, setNuevaPassword] = useState("");
