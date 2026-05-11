@@ -49,12 +49,10 @@ export default function AuthModal({ isOpen, onClose }) {
             setLoading(true);
 
             await sincronizarProgreso();
-
             setLoading(false);
-
             onClose();
+            window.location.reload();
 
-            router.refresh();
 
             alert("Progreso sincronizado.");
         };

@@ -14,6 +14,8 @@ export default function Home() {
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [progresoLocal, setProgresoLocal] = useState(0);
+  const [showWelcomeMenu, setShowWelcomeMenu] = useState(true);
+
 
   useEffect(() => {
   async function inicializarTodo() {
@@ -80,7 +82,7 @@ export default function Home() {
       <AuthModal isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} />
 
       {/* Interfaz principal a la derecha */}
-      {!showInfo && (
+      {!showInfo && showWelcomeMenu && (
         <div 
           className="content-overlay"
           style={{
@@ -104,6 +106,11 @@ export default function Home() {
               <h3 style={{ textTransform: "uppercase", color: "white", marginTop: "5px", fontSize: "1.5rem" }}>
                 {etapaActual === "portada" ? "INICIO" : etapaActual}
               </h3>
+
+              <button onClick={() => setShowWelcomeMenu(false)} className="close-btn">
+              (❌)
+              </button>
+
             </div>
 
             <button 
@@ -132,7 +139,7 @@ export default function Home() {
       )}
 
       {/* Modal de Guía */}
-      {showInfo && (
+      {showInfo && showWelcomeMenu && (
         <div className="modal-overlay">
           <div className="glass-modal">
             <h2>Guía de Inicio</h2>
@@ -168,7 +175,7 @@ export default function Home() {
           line-height: 1.4;
         }
         .content-overlay {
-          z-index: 120;
+          z-index: 100;
         }
           
         .modal-overlay {
