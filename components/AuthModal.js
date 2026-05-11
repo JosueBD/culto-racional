@@ -39,6 +39,7 @@ export default function AuthModal({ isOpen, onClose }) {
     const handleSignOut = async () => {
         await supabase.auth.signOut();
         localStorage.removeItem("progreso");
+        localStorage.removeItem("guia-vista");
         onClose();
         window.location.reload();
     };

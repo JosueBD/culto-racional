@@ -34,8 +34,7 @@ export default function Home() {
       setUser(currentUser);
 
       // 2. Sincronizar
-      const nivelSincronizado = await sincronizarProgreso();
-      setProgresoLocal(nivelSincronizado);
+      await sincronizarProgreso();
 
     } catch (error) {
       console.error("Error al inicializar:", error);
@@ -96,7 +95,15 @@ export default function Home() {
             width: "250px",
           }}
         >
-          <div className="glass-card">
+          <div className="glass-card welcome-card">
+            <button
+              type="button"
+              onClick={() => setShowWelcomeMenu(false)}
+              className="welcome-close-btn"
+              aria-label="Cerrar menú de bienvenida"
+            >
+              ×
+            </button>
             <h2 style={{ color: "#ad8306", fontSize: "1.2rem", marginBottom: "15px" }}>
               {user ? `Bienvenido, ${user.email.split('@')[0]}` : "Bienvenido(a)"}
             </h2>
@@ -106,10 +113,6 @@ export default function Home() {
               <h3 style={{ textTransform: "uppercase", color: "white", marginTop: "5px", fontSize: "1.5rem" }}>
                 {etapaActual === "portada" ? "INICIO" : etapaActual}
               </h3>
-
-              <button onClick={() => setShowWelcomeMenu(false)} className="close-btn">
-              (❌)
-              </button>
 
             </div>
 
@@ -139,7 +142,7 @@ export default function Home() {
       )}
 
       {/* Modal de Guía */}
-      {showInfo && showWelcomeMenu && (
+      {showInfo && (
         <div className="modal-overlay">
           <div className="glass-modal">
             <h2>Guía de Inicio</h2>
@@ -173,6 +176,32 @@ export default function Home() {
           box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
           color: #e0e0e0; 
           line-height: 1.4;
+        }
+        .welcome-card {
+          position: relative;
+        }
+        .welcome-close-btn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          width: 28px;
+          height: 28px;
+          border: 1px solid rgba(212, 175, 55, 0.35);
+          border-radius: 50%;
+          background: rgba(0, 0, 0, 0.35);
+          color: #f4d47b;
+          cursor: pointer;
+          font-size: 1.1rem;
+          line-height: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        }
+        .welcome-close-btn:hover {
+          background: rgba(173, 131, 6, 0.25);
+          color: white;
+          transform: scale(1.05);
         }
         .content-overlay {
           z-index: 100;
