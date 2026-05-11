@@ -1,20 +1,22 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { supabase } from "@/lib/supabase"; 
-import { useRouter } from "next/navigation";
+export const dynamic = "force-dynamic";
 
-useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-        console.log("SESSION:", data.session);
-    });
-}, []);
+import { useState, useEffect } from "react";
+import { supabase } from "@/lib/supabase";
+import { useRouter } from "next/navigation";
 
 export default function ActualizarPasswordPage() {
     const [nuevaPassword, setNuevaPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [mensaje, setMensaje] = useState("");
     const router = useRouter();
+
+    useEffect(() => {
+        supabase.auth.getSession().then(({ data }) => {
+            console.log("SESSION:", data.session);
+        });
+    }, []);
 
     const handleUpdate = async (e) => {
         e.preventDefault();
