@@ -21,11 +21,11 @@ const routes = {
     final: "/final"
 };
 
-export default function NavBar({ hidden }) {
+export default function NavBar() {
   const progreso = getProgreso(); // número
 
     return (
-        <nav className={`nav-bar ${hidden ? "nav-hidden" : ""}`}>
+        <nav className="nav-bar">
         <h1 className="title">Culto Racional</h1>
 
         <div className="logo">

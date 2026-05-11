@@ -526,15 +526,8 @@ h3 {
     z-index: 100;
 }
 
-.nav-hidden {
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    transform: translateX(-100%) !important;
-}
-
   /* PROGRESS BAR: Justo debajo del navbar */
-    .progress-container {
+.progress-container {
     position: fixed; /* Importante que también sea fixed si el navbar lo es */
     top: 60px; 
     width: 100%;
@@ -542,8 +535,8 @@ h3 {
 }
 
   /* CONTENIDO GENERAL: Empuja todo hacia abajo para no quedar oculto */
-    .content,
-    .reading-container {
+.content,
+.reading-container {
     margin-top: 110px; /* Ajustado para dar aire al progress bar */
     padding: 0 20px;   /* Un poco más de espacio en móviles */
     box-sizing: border-box; /* Evita que el padding rompa el ancho */
@@ -559,7 +552,7 @@ h3 {
 
   /* SECCIONES CON IMÁGENES DE FONDO */
   /* estructura estándar de proyecto */
-    .portada, .introduccion, .puerta, .atrio, .lugar-santo, .lugar-santisimo, .final {
+.portada, .introduccion, .puerta, .atrio, .lugar-santo, .lugar-santisimo, .final {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -574,12 +567,12 @@ h3 {
     flex-direction: column; /* Recomendado para que el navbar y contenido se apilen bien */
 }
     
-    .introduccion { background-image: url('/sources/Introduccion-movil.png'); }
-    .puerta { background-image: url('/sources/Puerta-movil.png'); }
-    .atrio { background-image: url('/sources/Atrio-movil.png'); }
-    .lugar-santo { background-image: url('/sources/Lugar-Santo-movil.png'); }
-    .lugar-santisimo { background-image: url('/sources/Lugar-Santisimo-movil.png'); }
-    .final { 
+.introduccion { background-image: url('/sources/Introduccion-movil.png'); }
+.puerta { background-image: url('/sources/Puerta-movil.png'); }
+.atrio { background-image: url('/sources/Atrio-movil.png'); }
+.lugar-santo { background-image: url('/sources/Lugar-Santo-movil.png'); }
+.lugar-santisimo { background-image: url('/sources/Lugar-Santisimo-movil.png'); }
+.final { 
     background-image: url('/sources/Final-movil.png'); 
     background-position: top center;
 }

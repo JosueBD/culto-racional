@@ -65,7 +65,7 @@ export default function Home() {
     <main className="background">
       {!showInfo && <StageAudio src="/audio/fondo.mp3" />}
       
-      <NavBar hidden={showInfo || isAuthOpen} />
+      {!showInfo && !isAuthOpen && <NavBar />}
 
       <AuthModal isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} />
 
