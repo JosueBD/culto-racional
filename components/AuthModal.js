@@ -69,6 +69,21 @@ export default function AuthModal({ isOpen, onClose }) {
             alert("Progreso restablecido.");
         };
 
+        const handleForgotPassword = async () => {
+            if (!email) {
+                alert("Escribe tu email primero.");
+                return;
+            }
+
+        const { error } = await supabase.auth.resetPasswordForEmail(email, {
+            redirectTo: `${window.location.origin}/actualizar-password`,
+        });
+
+        if (error) alert(error.message);
+        else alert("Revisa tu correo para cambiar la contraseña.");
+        };
+
+
     return (
         <div className="auth-overlay">
             <div className="glass-card auth-card">
@@ -101,6 +116,7 @@ export default function AuthModal({ isOpen, onClose }) {
                         <p className="toggle-text" onClick={() => setIsRegister(!isRegister)}>
                             {isRegister ? "¿Ya tienes cuenta? Entra aquí" : "¿Eres nuevo? Crea una cuenta"}
                         </p>
+                        <p onClick={handleForgotPassword}> ¿Olvidaste tu contraseña? </p>
                     </div>
                 )}
             </div>
