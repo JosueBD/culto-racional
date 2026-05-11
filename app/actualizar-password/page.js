@@ -1,6 +1,7 @@
 "use client";
+
 import { useState } from "react";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase"; // Asegúrate de que esta ruta sea correcta
 import { useRouter } from "next/navigation";
 
 export default function ActualizarPasswordPage() {
@@ -12,43 +13,57 @@ export default function ActualizarPasswordPage() {
     const handleUpdate = async (e) => {
         e.preventDefault();
         setLoading(true);
+        setMensaje("");
 
-        const { error } = await supabase.auth.updateUser({
-            password: nuevaPassword,
-        });
+        try {
+            const { error } = await supabase.auth.updateUser({
+                password: nuevaPassword,
+            });
 
-        if (error) {
-            setMensaje("Error: " + error.message);
-        } else {
-            setMensaje("¡Contraseña actualizada con éxito!");
-            // Redirigir al inicio después de 2 segundos
-            setTimeout(() => router.push("/"), 2000);
+            if (error) {
+                setMensaje("Error: " + error.message);
+            } else {
+                setMensaje("¡Contraseña actualizada con éxito! Redirigiendo...");
+                setTimeout(() => router.push("/"), 2000);
+            }
+        } catch (err) {
+            setMensaje("Ocurrió un error inesperado.");
+        } finally {
+            setLoading(false);
         }
-        setLoading(false);
     };
 
     return (
         <div className="auth-overlay">
             <div className="glass-card auth-card">
-                <h2>Nueva Contraseña</h2>
-                <p style={{ fontSize: "0.9rem", marginBottom: "20px", opacity: 0.7 }}>
-                    Ingresa tu nueva clave de acceso
+                <h2>Restablecer Contraseña</h2>
+                <p style={{ fontSize: "0.85rem", marginBottom: "20px", opacity: 0.7 }}>
+                    Ingresa tu nueva clave para el proyecto de JosueBD
                 </p>
                 
                 <form onSubmit={handleUpdate}>
                     <input 
                         type="password" 
-                        placeholder="Escribe la nueva contraseña" 
+                        placeholder="Nueva contraseña" 
                         value={nuevaPassword} 
                         onChange={(e) => setNuevaPassword(e.target.value)} 
                         required 
+                        minLength={6}
                     />
                     <button type="submit" disabled={loading} className="btn-entrar">
-                        {loading ? "ACTUALIZANDO..." : "CAMBIAR CONTRASEÑA"}
+                        {loading ? "ACTUALIZANDO..." : "GUARDAR CAMBIOS"}
                     </button>
                 </form>
 
-                {mensaje && <p style={{ marginTop: "20px", color: mensaje.includes("Error") ? "#ff4d4d" : "#ad8306" }}>{mensaje}</p>}
+                {mensaje && (
+                    <p style={{ 
+                        marginTop: "20px", 
+                        fontSize: "0.9rem",
+                        color: mensaje.includes("Error") ? "#ff4d4d" : "#ad8306" 
+                    }}>
+                        {mensaje}
+                    </p>
+                )}
             </div>
 
             <style jsx>{`
@@ -69,6 +84,7 @@ export default function ActualizarPasswordPage() {
                 .btn-entrar {
                     background: #ad8306; border: none; color: white; padding: 12px; width: 100%;
                     border-radius: 8px; cursor: pointer; font-weight: bold; margin-top: 10px;
+                    transition: opacity 0.2s;
                 }
                 .btn-entrar:disabled { opacity: 0.5; cursor: not-allowed; }
             `}</style>
