@@ -13,7 +13,7 @@ export default function Home() {
   const { setEnabled } = useAudio();
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [user, setUser] = useState(null);
-  const [progresoLocal, setProgresoLocal] = useState(0);
+  const [etapaActual, setEtapaActual] = useState("intro");
   const [showWelcomeMenu, setShowWelcomeMenu] = useState(true);
 
 
@@ -22,10 +22,7 @@ export default function Home() {
 
     // comprobar guía primero
     const yaVioGuia = localStorage.getItem("guia-vista");
-
-    if (!yaVioGuia) {
-      setShowInfo(true);
-    }
+    setShowInfo(!yaVioGuia);
 
     try {
       // 1. Obtener usuario
@@ -42,6 +39,7 @@ export default function Home() {
     } finally {
       setIsSyncing(false);
     }
+    setEtapaActual(getUserProgress());
   }
 
   inicializarTodo();
@@ -70,8 +68,6 @@ export default function Home() {
       </div>
     );
   }
-
-  const etapaActual = getUserProgress();
 
   return (
     <main className="background">
