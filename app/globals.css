@@ -522,7 +522,7 @@ h3 {
     position: relative;
     top: 0;
     left: 0; /* Asegura que empiece desde el borde */
-    z-index: 100;
+    z-index: 10;
     will-change: auto;
     transform: none;
     backdrop-filter: none;

@@ -158,7 +158,7 @@ export default function Home() {
           line-height: 1.4;
         }
         .content-overlay {
-          z-index: 10;
+          z-index: 120;
         }
           
         .modal-overlay {
