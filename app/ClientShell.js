@@ -32,7 +32,7 @@ export default function ClientShell({ children }) {
           opacity: 0.7,
         }}
       >
-        ESBDGG Ecosistema → {"\u2192"}
+        ESBDGG Ecosistema →
       </a>
 
       <a href="/politica-de-privacidad"
