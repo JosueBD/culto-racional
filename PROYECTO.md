@@ -29,9 +29,9 @@ Recorrido por etapas: `introduccion`, `puertas`, `atrios`, `lugar-santo`, `lugar
 
 ## Pendientes
 - [x] Fix de `app/layout.js` verificado el 2026-10-04: ya está aplicado. `layout.js` es Server Component (sin "use client", exporta `metadata`, la parte de cliente va en `ClientShell`) y está en git, commit `07e61e1` ("Sincronizar con git el fix de indexacion ya aplicado en produccion").
-- [ ] `culto-racional-deploy.zip` está en la raíz sin registrar en git: decidir si se conserva, se mueve o se ignora.
-- [ ] Existe otra copia en `E:\prueba de culto-racional desde github\culto-racional` (agosto 2026): decidir si se retira.
-- [ ] Este `PROYECTO.md` no está guardado en git todavía. Guardarlo cuando Josué lo apruebe.
+- [x] `culto-racional-deploy.zip`: enviado a la Papelera de reciclaje el 2026-10-05 por orden de Josué.
+- [x] Copia `E:\prueba de culto-racional desde github`: enviada a la Papelera de reciclaje el 2026-10-05 por orden de Josué (era un clon sin cambios propios).
+- [x] `PROYECTO.md` guardado en git el 2026-10-05 (rama `seo-visibilidad-google`).
 - [ ] Candidato para usar el crédito de 100 USD de sesiones en la nube (vence el 2026-11-05): es el único proyecto que ya tiene repositorio en GitHub.
 
 ## Revisión en vivo del 2026-10-05 (Claude en Chrome, solo lectura, `culto-racional.store-esbdgg.com`)
@@ -86,3 +86,4 @@ GUARDADO EN GIT el 2026-10-05: commit `cde985c` en la rama local `seo-visibilida
 - Comprobación: `npm run build` pasó; las 19 páginas de `out/` son idénticas a las de antes en etiquetas del `<head>`, texto y clases (comparación automática). Prueba en local como invitado: Guía de Inicio, redirección de `/puertas/` y `/final/` a `/introduccion/`, Política de Privacidad, sin errores de consola. No probado en local: inicio de sesión y sincronización con cuenta.
 - ESTADO: `out/` local está compilado con `next` 16.3.8 y NO está subido a Hostinger. Hostinger sigue con la compilación anterior (16.2.4), que funciona. Para volver atrás: `git checkout <commit anterior> -- package-lock.json` y `npm ci`.
 - `culto-racional-deploy.zip` (raíz, 520 KB, 29/09): es una copia comprimida de un `out/` antiguo, sin `robots.txt` ni `og/`; se regenera con `npm run build`. `E:\prueba de culto-racional desde github\culto-racional\culto-racional` (70 MB, agosto): clon limpio del mismo repositorio en el commit `3a87f25`, que ya está contenido en `main`; sin cambios propios. Ninguno de los dos aporta nada que no esté en el repositorio. No se borró nada: pendiente de que Josué los elimine o diga que sí.
+- 2026-10-05: zip y copia vieja enviados a la Papelera de reciclaje de Windows (recuperables hasta que se vacíe). La compilación con `next` 16.3.8 NO se subió a Hostinger: no hace falta, porque sus correcciones son de servidor y Hostinger solo sirve archivos estáticos; se subirá con el próximo cambio real del sitio.
