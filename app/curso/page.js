@@ -1,5 +1,13 @@
 import Link from "next/link";
 import { curso } from "../../data/curso";
+import { metadataDe } from "../seo";
+
+export const metadata = metadataDe({
+    title: "Curso | Culto Racional",
+    description: "Índice del curso Culto Racional: Introducción, Puertas, Atrios, Lugar Santo, Lugar Santísimo y Final.",
+    ruta: "/curso/",
+    imagen: "portada",
+});
 
 export default function Curso() {
     return (

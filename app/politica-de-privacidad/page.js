@@ -1,7 +1,11 @@
-export const metadata = {
+import { metadataDe } from "../seo";
+
+export const metadata = metadataDe({
   title: "Política de Privacidad | Culto Racional",
   description: "Política de privacidad de Culto Racional: qué datos recopilamos, para qué los usamos y tus derechos.",
-};
+  ruta: "/politica-de-privacidad/",
+  imagen: "portada",
+});
 
 export default function PoliticaDePrivacidad() {
   return (

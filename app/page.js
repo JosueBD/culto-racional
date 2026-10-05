@@ -66,7 +66,10 @@ export default function Home() {
 
   if (isSyncing) {
     return (
-      <div className="background" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
+      <div className="background" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'white', textAlign: 'center', padding: '24px', textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
+        <h1>Culto Racional</h1>
+        <p>El Tabernáculo de David Reedificado</p>
+        <p style={{ maxWidth: '560px' }}>Recorrido progresivo por puertas, atrios, lugar santo y lugar santísimo: acción de gracias, alabanza, bendición y adoración.</p>
         <p>Sincronizando tu camino...</p>
       </div>
     );
