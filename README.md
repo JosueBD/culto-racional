@@ -2,4 +2,4 @@ Esta es una aplicación para reflexionar sobre el culto racional que habla Rom. 
 
 Gracias por abrirla, Dios te siga bendiciendo y prosperando
 
-puedes abrirla aquí en este enlace:  https://culto-racional.vercel.app/
+puedes abrirla aquí en este enlace:  https://culto-racional.store-esbdgg.com/
