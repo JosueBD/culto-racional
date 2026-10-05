@@ -60,3 +60,11 @@ Decidir en qué se usa el crédito de sesiones en la nube.
 
 ## Estado al 2026-10-05
 GUARDADO EN GIT el 2026-10-05: commit `cde985c` en la rama local `seo-visibilidad-google` (no en `main`, no subido a GitHub; `main` sigue en `1391eca`). Para publicar por GitHub habría que fusionar la rama en `main` y hacer `push`, con el sí de Josué. Hostinger no depende de git: se publica subiendo `out/`. Cambios incluidos: `public/sitemap.xml`, `public/robots.txt`, `public/og/` (7 imágenes), `app/seo.js`, `app/not-found.js`, `app/layout.js`, los 6 `layout.js` de etapa, `app/politica-de-privacidad/page.js`, `app/curso/page.js`, `app/page.js` (solo pantalla de carga). `npm run build` pasó; `out/` está regenerado con todo. Probado en local como invitado: portada con Guía de Inicio, etapas bloqueadas, `/curso/`, página 404, sin errores de consola. No probado en local: inicio de sesión y sincronización con cuenta. Siguiente: commit con el sí de Josué; él sube `out/` a Hostinger (sin `audio` ni `sources`); después verificar en vivo y probar su sesión.
+
+## Publicado en Hostinger el 2026-10-05 (Josué subió `out/`; verificado en vivo por Code)
+- `robots.txt` y `sitemap.xml` nuevos en vivo (8 direcciones, sin `/puerta/` ni `/atrio/`).
+- Las 7 imágenes de `/og/` responden 200.
+- Las 6 etapas, `/curso/` y `/politica-de-privacidad/` tienen `og:image` y `canonical` propios; la portada trae `<h1>Culto Racional</h1>` en el HTML.
+- Portada probada en vivo como invitado: abre la Guía de Inicio, sin recursos fallidos.
+- Pendiente: la página 404 sigue siendo la de Hostinger en inglés; falta la línea `ErrorDocument 404 /404.html` en el `.htaccess` de `culto-racional/` (lo hace Josué en Hostinger). Pendiente: que Josué pruebe su sesión y la sincronización en vivo; pedir en Search Console que Google lea el `sitemap.xml`.
+- `culto-racional.vercel.app` no recibe estos cambios hasta fusionar la rama `seo-visibilidad-google` en `main` y hacer `push`.
