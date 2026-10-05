@@ -3,7 +3,7 @@
 ## Estado actual
 App web para reflexionar sobre el culto racional de Romanos 12:1. Es la aplicación más importante para Josué de todo el ecosistema ESBDGG. Está publicada y en uso. El 2026-10-03 la carpeta se movió de `E:\culto-racional` a `E:\claude code proyecto src\culto-racional` para quedar junto al resto de proyectos de Claude; el código no cambió.
 
-- Publicada en: https://culto-racional.vercel.app/ y `culto-racional.store-esbdgg.com`
+- Publicada en: `culto-racional.store-esbdgg.com` (Hostinger, única copia activa). El proyecto de Vercel (`culto-racional.vercel.app`) está PAUSADO desde el 2026-10-05 por decisión de Josué: no se elimina, lo conserva guardado.
 - Repositorio: https://github.com/JosueBD/culto-racional.git
 - Último commit (2026-09-29): `1391eca` "Corregir footer: flecha duplicada y colision audio/enlace"
 
@@ -70,3 +70,10 @@ GUARDADO EN GIT el 2026-10-05: commit `cde985c` en la rama local `seo-visibilida
 - HECHO 2026-10-05: Josué probó su sesión y la sincronización en vivo: funciona igual.
 - Pendiente: pedir en Search Console que Google lea el `sitemap.xml`.
 - `culto-racional.vercel.app` no recibe estos cambios hasta fusionar la rama `seo-visibilidad-google` en `main` y hacer `push`.
+
+## Cierre del 2026-10-05
+- Vercel pausado por Josué; verificado: `culto-racional.vercel.app` responde 503 `DEPLOYMENT_PAUSED`. DECISIÓN: pausar, no eliminar. No volver a proponer borrarlo.
+- Supabase, Authentication > URL Configuration (captura de Josué): Site URL = `https://culto-racional.store-esbdgg.com` (correcto). Redirect URLs: `culto-racional.vercel.app/**`, `localhost:3000/**`, `culto-racional.store-esbdgg.com/**`. No se cambió nada.
+- Search Console (propiedad `store-esbdgg.com`): Josué reenvió `sitemap.xml` el 2026-10-05; marcaba 7 páginas (lectura anterior a la subida), debe pasar a 8.
+- Vulnerabilidades al 2026-10-05 (`npm audit`): 16 en total, 1 crítica (`next`), 13 altas (casi todas en `gh-pages` y `eslint-config-next`, herramientas de construcción), 1 moderada, 1 baja. No se actualizó nada. Con Vercel pausado, en producción solo hay archivos estáticos.
+- `README.md` todavía enlaza a `culto-racional.vercel.app`.
