@@ -66,5 +66,7 @@ GUARDADO EN GIT el 2026-10-05: commit `cde985c` en la rama local `seo-visibilida
 - Las 7 imágenes de `/og/` responden 200.
 - Las 6 etapas, `/curso/` y `/politica-de-privacidad/` tienen `og:image` y `canonical` propios; la portada trae `<h1>Culto Racional</h1>` en el HTML.
 - Portada probada en vivo como invitado: abre la Guía de Inicio, sin recursos fallidos.
-- Pendiente: la página 404 sigue siendo la de Hostinger en inglés; falta la línea `ErrorDocument 404 /404.html` en el `.htaccess` de `culto-racional/` (lo hace Josué en Hostinger). Pendiente: que Josué pruebe su sesión y la sincronización en vivo; pedir en Search Console que Google lea el `sitemap.xml`.
+- HECHO 2026-10-05: Josué creó en Hostinger `culto-racional/.htaccess` con la línea `ErrorDocument 404 /404.html` (no existía antes). Verificado en vivo: una dirección inexistente responde 404 con la página en español "Página no encontrada | Culto Racional"; el resto de rutas sigue en 200. OJO: ese `.htaccess` vive solo en el servidor, no en el repositorio; al subir `out/` no se pisa porque `out/` no trae `.htaccess`.
+- HECHO 2026-10-05: Josué probó su sesión y la sincronización en vivo: funciona igual.
+- Pendiente: pedir en Search Console que Google lea el `sitemap.xml`.
 - `culto-racional.vercel.app` no recibe estos cambios hasta fusionar la rama `seo-visibilidad-google` en `main` y hacer `push`.
