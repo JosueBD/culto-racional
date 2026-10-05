@@ -77,3 +77,5 @@ GUARDADO EN GIT el 2026-10-05: commit `cde985c` en la rama local `seo-visibilida
 - Search Console (propiedad `store-esbdgg.com`): Josué reenvió `sitemap.xml` el 2026-10-05; marcaba 7 páginas (lectura anterior a la subida), debe pasar a 8.
 - Vulnerabilidades al 2026-10-05 (`npm audit`): 16 en total, 1 crítica (`next`), 13 altas (casi todas en `gh-pages` y `eslint-config-next`, herramientas de construcción), 1 moderada, 1 baja. No se actualizó nada. Con Vercel pausado, en producción solo hay archivos estáticos.
 - `README.md` todavía enlaza a `culto-racional.vercel.app`.
+- Rama `seo-visibilidad-google` subida a GitHub el 2026-10-05 como respaldo (con el sí de Josué). `main` sin cambios (`1391eca`). No hay pull request abierto.
+- Corrección del conteo de vulnerabilidades: GitHub (Dependabot) informa 42 en `main` (3 críticas, 23 altas, 13 moderadas, 3 bajas); `npm audit` en local informa 16. Cuentan distinto: GitHub suma cada aviso, `npm audit` agrupa por paquete. Existe en GitHub una rama de Dependabot con actualizaciones propuestas (`dependabot/npm_and_yarn/...`), sin fusionar.
