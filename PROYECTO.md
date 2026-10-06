@@ -11,7 +11,7 @@ App web para reflexionar sobre el culto racional de Romanos 12:1. Es la aplicaci
 - Next.js 16.2.4, React 19.2.4 (JavaScript, sin TypeScript)
 - Supabase (`@supabase/ssr`, `@supabase/supabase-js`)
 - framer-motion
-- Despliegue en Vercel. `package.json` conserva además un script `deploy` con `gh-pages -d out` [PENDIENTE: confirmar si todavía se usa o es un resto anterior].
+- Despliegue: Hostinger, subiendo a mano la carpeta `out/` (exportación estática). Vercel pausado. El script `deploy` de `gh-pages` se retiró el 2026-10-05.
 
 Aviso de `AGENTS.md`: esta versión de Next.js tiene cambios que rompen con versiones anteriores. Antes de escribir código, leer la guía correspondiente en `node_modules/next/dist/docs/`.
 
@@ -88,3 +88,9 @@ GUARDADO EN GIT el 2026-10-05: commit `cde985c` en la rama local `seo-visibilida
 - `culto-racional-deploy.zip` (raíz, 520 KB, 29/09): es una copia comprimida de un `out/` antiguo, sin `robots.txt` ni `og/`; se regenera con `npm run build`. `E:\prueba de culto-racional desde github\culto-racional\culto-racional` (70 MB, agosto): clon limpio del mismo repositorio en el commit `3a87f25`, que ya está contenido en `main`; sin cambios propios. Ninguno de los dos aporta nada que no esté en el repositorio. No se borró nada: pendiente de que Josué los elimine o diga que sí.
 - 2026-10-05: zip y copia vieja enviados a la Papelera de reciclaje de Windows (recuperables hasta que se vacíe). La compilación con `next` 16.3.8 NO se subió a Hostinger: no hace falta, porque sus correcciones son de servidor y Hostinger solo sirve archivos estáticos; se subirá con el próximo cambio real del sitio.
 - 2026-10-05 (más tarde): Josué subió a Hostinger el `out/` compilado con `next` 16.3.8. Verificado en vivo por huella SHA-256: los 122 archivos publicados (todo `out/` salvo `audio` y `sources`) son idénticos a los locales del commit `e22d812`; `audio` y `sources` siguen respondiendo 200; la página 404 en español y el `.htaccess` siguen activos; portada e Introducción cargan como invitado sin recursos fallidos. Lo publicado y el repositorio (rama `seo-visibilidad-google`) coinciden. Josué confirmó que su sesión y la sincronización funcionan igual con esta compilación.
+
+## 2026-10-05: gh-pages retirado y rama fusionada en main
+- GitHub Pages en desuso (rama `gh-pages` sin cambios desde el 2026-05-09; no hay workflows). Con el sí de Josué se quitó de `package.json` la dependencia `gh-pages` y los scripts `predeploy` y `deploy`. Solo cambiaron `package.json` y `package-lock.json`. La rama remota `gh-pages` no se borró.
+- `npm audit`: de 7 a 5 vulnerabilidades, todas altas y todas en la cadena de `eslint-config-next` (herramienta de revisión de código, no forma parte del sitio). No tienen arreglo en la serie 16; `npm audit fix --force` propone bajar a la 14: no hacerlo.
+- `npm run build` pasó; las 19 páginas generadas son idénticas en contenido a las publicadas. El `out/` local se regeneró (cambia el identificador interno de compilación); no hace falta subirlo a Hostinger.
+- La rama `seo-visibilidad-google` se fusionó en `main` y `main` se subió a GitHub. Vercel sigue pausado: no se publicó nada.
